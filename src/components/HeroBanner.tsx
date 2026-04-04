@@ -2,11 +2,11 @@ import banner from "@/assets/banner.png";
 
 const HeroBanner = () => {
   return (
-    <section className="w-full">
+    <section className="w-full bg-card">
       <img
         src={banner}
         alt="Planetary News - Seu portal de notícias"
-        className="w-full h-auto max-h-[400px] object-cover"
+        className="w-full h-auto object-contain"
         loading="eager"
       />
     </section>

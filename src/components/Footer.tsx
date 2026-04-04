@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
-          <img src={logo} alt="Planetary News" className="h-16 mb-4" />
+          <img src={logo} alt="Planetary News" className="h-20 mb-4" />
           <p className="text-muted-foreground font-body text-sm leading-relaxed">
             Informação confiável, atualizada e de qualidade. Conectando você ao mundo.
           </p>
@@ -67,6 +67,18 @@ const Footer = () => {
         <div className="container py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-muted-foreground font-body">
           <span>© {new Date().getFullYear()} Planetary News. Todos os direitos reservados.</span>
           <span>Responsável: Raimundo Inacio Teixeira</span>
+        </div>
+        <div className="container pb-4 text-center text-xs font-body text-muted-foreground">
+          Desenvolvido e Gerenciado pela{" "}
+          <a
+            href="https://benksdigital.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold hover:underline"
+            style={{ color: "hsl(30, 100%, 50%)" }}
+          >
+            Benks
+          </a>
         </div>
       </div>
     </footer>

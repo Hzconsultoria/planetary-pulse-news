@@ -18,7 +18,8 @@ const RadioPlayer = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded font-display text-xs uppercase tracking-wider font-bold hover:bg-primary/90 transition-colors"
         >
-          Ouvir ao Vivo <ExternalLink size={14} />
+          <Radio size={14} />
+          Ouvir Rádio ao Vivo <ExternalLink size={14} />
         </a>
       </div>
     </div>
