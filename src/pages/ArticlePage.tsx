@@ -64,11 +64,11 @@ const ArticlePage = () => {
               <div className="flex items-center gap-3 mt-8 pt-6 border-t border-border">
                 <Share2 size={16} className="text-muted-foreground" />
                 <span className="text-sm text-muted-foreground font-body">Compartilhar:</span>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded hover:bg-info transition-colors">
-                  <Facebook size={16} />
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded hover:bg-info transition-colors font-body text-xs font-bold">
+                  FB
                 </a>
-                <a href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded hover:bg-info transition-colors">
-                  <Twitter size={16} />
+                <a href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded hover:bg-info transition-colors font-body text-xs font-bold">
+                  X
                 </a>
                 <a href={`https://wa.me/?text=${shareTitle}%20${shareUrl}`} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded hover:bg-accent transition-colors font-body text-xs font-bold">
                   WA
