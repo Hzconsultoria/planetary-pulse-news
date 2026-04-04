@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import BreakingNewsTicker from "@/components/BreakingNewsTicker";
 import HeroBanner from "@/components/HeroBanner";
+import MediaButtons from "@/components/MediaButtons";
 import FeaturedNews from "@/components/FeaturedNews";
 import LatestNews from "@/components/LatestNews";
 import TrendingSidebar from "@/components/TrendingSidebar";
@@ -8,6 +9,7 @@ import TVWebSection from "@/components/TVWebSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import RadioPlayer from "@/components/RadioPlayer";
 import Footer from "@/components/Footer";
+import AdSpace from "@/components/AdSpace";
 
 const Index = () => {
   return (
@@ -15,6 +17,7 @@ const Index = () => {
       <Header />
       <BreakingNewsTicker />
       <HeroBanner />
+      <MediaButtons />
       <main className="flex-1">
         <FeaturedNews />
         
@@ -25,16 +28,13 @@ const Index = () => {
             </div>
             <div>
               <TrendingSidebar />
-              
-              {/* Ad space */}
-              <div className="mt-6 bg-card rounded-lg p-6 text-center border border-dashed border-border">
-                <p className="text-xs text-muted-foreground font-display uppercase tracking-wider">Espaço Publicitário</p>
-              </div>
+              <AdSpace className="mt-6" />
             </div>
           </div>
         </div>
 
         <TVWebSection />
+        <AdSpace className="container mb-8" />
         <NewsletterSection />
       </main>
       <Footer />

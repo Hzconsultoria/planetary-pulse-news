@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RadioPlayer from "@/components/RadioPlayer";
 import TrendingSidebar from "@/components/TrendingSidebar";
+import AdSpace from "@/components/AdSpace";
 import { Clock, User, Share2, ArrowLeft } from "lucide-react";
 
 const ArticlePage = () => {
@@ -60,8 +61,11 @@ const ArticlePage = () => {
                 <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
 
+              {/* Ad space below article content */}
+              <AdSpace className="my-8" />
+
               {/* Share */}
-              <div className="flex items-center gap-3 mt-8 pt-6 border-t border-border">
+              <div className="flex items-center gap-3 pt-6 border-t border-border">
                 <Share2 size={16} className="text-muted-foreground" />
                 <span className="text-sm text-muted-foreground font-body">Compartilhar:</span>
                 <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded hover:bg-info transition-colors font-body text-xs font-bold">
@@ -100,12 +104,15 @@ const ArticlePage = () => {
                       </Link>
                     ))}
                   </div>
+                  {/* Ad space below related news */}
+                  <AdSpace className="mt-6" />
                 </div>
               )}
             </article>
 
             <aside>
               <TrendingSidebar />
+              <AdSpace className="mt-6" />
             </aside>
           </div>
         </div>
