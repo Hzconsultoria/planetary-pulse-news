@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RadioPlayer from "@/components/RadioPlayer";
 import TrendingSidebar from "@/components/TrendingSidebar";
-import { Clock, User, Share2, Facebook, Twitter, ArrowLeft } from "lucide-react";
+import { Clock, User, Share2, ArrowLeft } from "lucide-react";
 
 const ArticlePage = () => {
   const { id } = useParams();
