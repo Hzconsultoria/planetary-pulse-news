@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
-import { Search, Menu, X, Radio, Phone, Mail } from "lucide-react";
+import { Search, Menu, X, Radio, Phone, Mail, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { categories } from "@/data/mockNews";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentTime, setCurrentTime] = useState(new Date());
+  const { user, isAdmin } = useAuth();
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -34,18 +36,18 @@ const Header = () => {
       <div className="bg-muted py-1.5 border-b border-border">
         <div className="container flex items-center justify-between text-xs text-muted-foreground font-body">
           <div className="flex items-center gap-1">
-            <span className="capitalize">{formattedDate}</span>
-            <span className="mx-2 hidden sm:inline">|</span>
-            <span className="hidden sm:inline font-semibold text-foreground">{formattedTime}</span>
+            <span className="capitalize text-[10px] sm:text-xs">{formattedDate}</span>
+            <span className="mx-1 sm:mx-2">|</span>
+            <span className="font-semibold text-foreground text-[10px] sm:text-xs">{formattedTime}</span>
           </div>
-          <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+5598981963260" className="flex items-center gap-1 hover:text-primary transition-colors">
-              <Phone size={11} /> (98) 98196-3260
+          <div className="flex items-center gap-2 sm:gap-4">
+            <a href="tel:+5598981963260" className="flex items-center gap-1 hover:text-primary transition-colors text-[10px] sm:text-xs">
+              <Phone size={10} className="hidden sm:block" /> <span className="hidden sm:inline">(98) 98196-3260</span><span className="sm:hidden">Tel</span>
             </a>
-            <a href="mailto:biortv36@gmail.com" className="flex items-center gap-1 hover:text-primary transition-colors">
-              <Mail size={11} /> biortv36@gmail.com
+            <a href="mailto:biortv36@gmail.com" className="flex items-center gap-1 hover:text-primary transition-colors text-[10px] sm:text-xs">
+              <Mail size={10} className="hidden sm:block" /> <span className="hidden md:inline">biortv36@gmail.com</span><span className="md:hidden">Email</span>
             </a>
-            <a href="https://wa.me/5598981963260" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <a href="https://wa.me/5598981963260" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-[10px] sm:text-xs">
               WhatsApp
             </a>
           </div>
@@ -74,6 +76,14 @@ const Header = () => {
           <button onClick={() => setSearchOpen(!searchOpen)} className="p-2 hover:text-primary transition-colors" aria-label="Buscar">
             <Search size={20} />
           </button>
+
+          <Link
+            to={user && isAdmin ? "/admin" : "/login"}
+            className="p-2 hover:text-primary transition-colors"
+            aria-label="Login"
+          >
+            <User size={20} />
+          </Link>
 
           <a
             href="https://www.multbiortv.com.br/radio"
